@@ -9,6 +9,9 @@ struct ContentView: View {
             VStack {
                 NewsView()
                     .opacity(opac)
+                    .refreshable {
+                        data.getData(query: "everything")
+                    }
             }
             .environmentObject(data)
             .onAppear {

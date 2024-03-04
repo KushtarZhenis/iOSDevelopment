@@ -13,9 +13,6 @@ struct NewsView: View {
                     openURL(URL(string: news.url)!)
                 }
         }
-           .refreshable {
-               data.getData(query: "everything")
-           }
     }
 }
 

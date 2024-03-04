@@ -9,6 +9,9 @@ struct TopHedlineViews: View {
             VStack {
                 NewsView()
                     .opacity(opac)
+                    .refreshable {
+                        data.getData(query: "top-headlines")
+                    }
             }
             .environmentObject(data)
             .onAppear {
@@ -28,3 +31,4 @@ struct TopHedlineViews_Previews: PreviewProvider {
         ContentView()
     }
 }
+
