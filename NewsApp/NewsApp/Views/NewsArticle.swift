@@ -6,6 +6,7 @@ struct NewsArticle: View {
     let urlToImage: String
     let author: String
     let description: String
+    let content:String
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -42,6 +43,6 @@ struct NewsArticle: View {
 }
 struct NewsArticle_Previews: PreviewProvider {
     static var previews: some View {
-        NewsArticle(title: "Title", urlToImage: "testurl",author: "nobody", description: "Code Palace")
+        NewsArticle(title: "Title", urlToImage: "testurl",author: "nobody", description: "Code Palace",content: "Something wnet wrong")
     }
 }

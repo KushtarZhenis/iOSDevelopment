@@ -8,7 +8,7 @@ struct NewsView: View {
         let newsArray = Array(data.news)
         
         return List(newsArray, id: \.self) { news in
-            NewsArticle(title: news.title, urlToImage: news.urlToImage ?? "", author: news.author ?? "", description: news.description ?? "")
+            NewsArticle(title: news.title ?? "", urlToImage: news.urlToImage ?? "", author: news.author ?? "", description: news.description ?? "",content: news.content ??  "")
                 .onTapGesture {
                     openURL(URL(string: news.url)!)
                 }
