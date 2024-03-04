@@ -67,7 +67,6 @@ class NewsAPI: ObservableObject {
                 completion(.failure(error))
                 return
             }
-            
             guard let jsonData = data else {
                 let error = NSError(domain: "DataError", code: -1, userInfo: nil)
                 completion(.failure(error))
@@ -81,6 +80,7 @@ class NewsAPI: ObservableObject {
     
 
     func getData(query: String, searchText: String? = nil) {
+
         self.query = query
         self.searchText = searchText ?? "apple"
         
@@ -105,4 +105,5 @@ class NewsAPI: ObservableObject {
     }
 
 }
+
         

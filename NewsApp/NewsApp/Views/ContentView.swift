@@ -5,10 +5,10 @@ struct ContentView: View {
   @State private var opac = 0.0
   @State private var searchText: String = ""
 
+
   var body: some View {
     NavigationView {
       VStack {
-        // Assuming NewsView is defined somewhere
         NewsView()
           .opacity(opac)
           .refreshable {
@@ -25,18 +25,17 @@ struct ContentView: View {
         }
       }
       .navigationTitle("News")
-      .toolbar { // Use toolbar for search bar with custom view
-        HStack(spacing: 0) { // Remove spacing between elements
+      .toolbar {
+        HStack(spacing: 0) {
           TextField("Search", text: $searchText, onCommit: {
             data.getData(query: "everything", searchText: searchText)
           })
           .padding(8)
           .background(Color.secondary.colorInvert())
           .cornerRadius(8)
-          .frame(maxWidth: .infinity) // Take full width
+          .frame(maxWidth: .infinity)
 
           Button(action: {
-            // Perform search action
             data.getData(query: "everything", searchText: searchText)
           }) {
             Image(systemName: "magnifyingglass")
@@ -56,4 +55,5 @@ struct ContentView: View {
       ContentView()
     }
   }
+   
 }
