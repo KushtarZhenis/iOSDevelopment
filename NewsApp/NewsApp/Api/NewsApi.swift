@@ -14,7 +14,7 @@ struct Article: Codable, Hashable{
     let description: String?
     let url: String
     let publishedAt: String
-    let content: String
+    let content: String?
     
     init(title: String, urlToImage: String, author: String, description: String, url: String, publishedAt: String, content: String) {
         self.id = UUID()
